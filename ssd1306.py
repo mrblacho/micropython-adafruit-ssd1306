@@ -99,6 +99,21 @@ class SSD1306:
 
     def text(self, string, x, y, col=1):
         self.framebuf.text(string, x, y, col)
+        
+    # Missing from current files in github:
+    # https://github.com/adafruit/micropython-adafruit-ssd1306/blob/master/ssd1306.py
+    def hline(self, x, y, w, col):
+        self.framebuf.hline(x, y, w, col)
+    def vline(self, x, y, h, col):
+        self.framebuf.vline(x, y, h, col)
+    def line(self, x1, y1, x2, y2, col):
+        self.framebuf.line(x1, y1, x2, y2, col)
+    def rect(self, x, y, w, h, col):
+        self.framebuf.rect(x, y, w, h, col)
+    def fill_rect(self, x, y, w, h, col):
+        self.framebuf.fill_rect(x, y, w, h, col)
+    def blit(self, fbuf, x, y):
+        self.framebuf.blit(fbuf, x, y)
 
 
 class SSD1306_I2C(SSD1306):
